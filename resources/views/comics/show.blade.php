@@ -14,6 +14,8 @@
                     <p>Serie: {{ $comic->series }}</p>
                     <p>Data di rilascio: {{ $comic->sale_date }}</p>
                     <p class="text-capitalize">Tipo: {{ $comic->type }}</p>
+                    <a class="btn btn-primary align-self-end" href="{{ route('comics.index') }}">Torna alla lista dei
+                        fumetti</a>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
@@ -24,4 +26,5 @@
 
 
     </div>
+    <div class="container"> </div>
 @endsection
