@@ -39,29 +39,10 @@ main{
 }
 
 .info{
-    h1{
-        color: #0f810d;
-    }
-    ul{
-        li{
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
-            border-bottom: 1px solid black;
-            span{
-                color: #0f810d;
-            }
-        }
-    }
+img{
+    width: 100%;
+    max-height: 70vh;
 }
-.image-character{
-max-width: 400px;
-}
-
-.info-box{
-    display: inline-block;
-    background-color: #39234d;
-    width: 30px;
-    height: 30px;
 }
 
 footer{
