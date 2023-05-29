@@ -4,8 +4,11 @@
 @endsection
 
 @section('main_content')
-    <div class="container d-flex my-5 justify-content-center">
+    <div class="container d-flex flex-column my-5 justify-content-center">
+        <a href="{{ route('comics.create') }}" class="btn btn-primary mb-5 align-self-start">Aggiungi un nuovo
+            fumetto</a>
         <div class="row justify-content-center">
+
             @foreach ($comics as $comic)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-card">
                     <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
