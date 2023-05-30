@@ -39,7 +39,8 @@ class ComicController extends Controller
         $newComic = new Comic();
         $newComic->fill($form_data);
         $newComic->save();
-        return redirect()->route('comics.show', $newComic->id);
+        return redirect()->route('comics.show', $newComic->id)->with('message', "Il prodotto {$newComic->title} è stato salvato con successo");
+        ;
     }
 
     /**
@@ -74,7 +75,7 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
         $comic->update($form_data);
-        return redirect()->route('comics.show', $comic->id);
+        return redirect()->route('comics.show', $comic->id)->with('message', "Il prodotto {$comic->title} è stato modificato con successo");
     }
 
     /**
@@ -84,6 +85,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index')->with('message', "Il fumetto {$comic->title} è stato cancellato con successo!");
     }
 }

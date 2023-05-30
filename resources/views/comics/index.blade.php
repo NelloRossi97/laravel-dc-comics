@@ -7,6 +7,11 @@
     <div class="container d-flex flex-column my-5 justify-content-center">
         <a href="{{ route('comics.create') }}" class="btn btn-primary mb-5 align-self-start">Aggiungi un nuovo
             fumetto</a>
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="row justify-content-center">
 
             @foreach ($comics as $comic)
