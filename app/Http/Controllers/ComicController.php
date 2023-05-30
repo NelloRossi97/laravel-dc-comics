@@ -60,7 +60,8 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $data = config('db_partials', 'headerLinks');
+        return view('comics.edit', compact('data', 'comic'));
     }
 
     /**
@@ -71,7 +72,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+        $comic->update($form_data);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
