@@ -51,7 +51,7 @@ class ComicController extends Controller
     public function show(Comic $comic)
     {
         $data = config('db_partials', 'headerLinks');
-        $visible = null;
+        $visible = false;
         return view('comics.show', compact('comic', 'data', 'visible'));
     }
 

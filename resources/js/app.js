@@ -6,10 +6,19 @@ import.meta.glob([
 ])
 
 
-const button = document.getElementById('deleteComic');
+const deleteButton = document.getElementById('deleteButton');
+const backButton = document.getElementById('backButton');
+
 let visible = false;
-button.addEventListener('click', toggleVisibility);
+const modal = document.querySelector('.my-modal');
+
+deleteButton.addEventListener('click', toggleVisibility);
+backButton.addEventListener('click', toggleVisibility);
+
 function toggleVisibility() {
-            console.log(visible);
-            visible = !visible;
-        }
+    console.log(visible);
+    visible = !visible;
+    if (visible) {
+        modal.classList.toggle('not-visible');
+    }
+}

@@ -25,7 +25,7 @@
                             Modifica Fumetto
                         </a>
                         <button type="submit" class="delete-button btn btn-danger ms-3"
-                            data-item-title="{{ $comic->title }}" id="deleteComic">
+                            data-item-title="{{ $comic->title }}" id="deleteButton">
                             Elimina fumetto
                         </button>
                     </div>
@@ -45,11 +45,11 @@
 
     </div>
     <div
-        class="my-modal d-flex justify-content-center align-items-center text-black {{ $visible = null ? 'visible' : 'not-visible' }}">
+        class="my-modal d-flex justify-content-center align-items-center text-black {{ $visible ? 'visible' : 'not-visible' }}">
         <div class="bg-white rounded-4 my-modal-body d-flex flex-column justify-content-center">
             <p class="p-2 text-center">Sei sicuro di voler eliminare questo fumetto?</p>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-primary me-3">
+                <button class="btn btn-primary me-3" id="backButton">
                     Torna indietro
                 </button>
                 <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
